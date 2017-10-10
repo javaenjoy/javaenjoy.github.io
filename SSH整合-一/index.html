@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="bug集,ssh框架整合," />
 
 
 
@@ -94,16 +94,20 @@
 
 
 
-<meta name="description" content="welcome to my study blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="僕の世界へようこそ">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="SSH整合笔记(一) &amp;emsp;&amp;emsp;&amp;emsp;本来准备国庆写点东西的,但是几乎都是写写删删,憋了几天没写出个所以然来,后来索性就没写了.最近几天自己看视频算是提前研究完了SSH整合,而且也用整合后的框架模仿着写了2个案例,过程曲折,BUG满天飞.全是没遇到过的.有的BUG我甚至花了一上午加中午休息的时间查询各种资料才解决掉,而且都是细节配置问题….但是自己解决了BUG之后的那种喜悦感,">
+<meta name="keywords" content="bug集,ssh框架整合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSH整合(一)">
+<meta property="og:url" content="http://yoursite.com/SSH整合-一/index.html">
 <meta property="og:site_name" content="僕の世界へようこそ">
-<meta property="og:description" content="welcome to my study blog">
+<meta property="og:description" content="SSH整合笔记(一) &amp;emsp;&amp;emsp;&amp;emsp;本来准备国庆写点东西的,但是几乎都是写写删删,憋了几天没写出个所以然来,后来索性就没写了.最近几天自己看视频算是提前研究完了SSH整合,而且也用整合后的框架模仿着写了2个案例,过程曲折,BUG满天飞.全是没遇到过的.有的BUG我甚至花了一上午加中午休息的时间查询各种资料才解决掉,而且都是细节配置问题….但是自己解决了BUG之后的那种喜悦感,">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/SSH整合-一/ssh.jpg">
+<meta property="og:updated_time" content="2017-10-10T18:40:27.803Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="僕の世界へようこそ">
-<meta name="twitter:description" content="welcome to my study blog">
+<meta name="twitter:title" content="SSH整合(一)">
+<meta name="twitter:description" content="SSH整合笔记(一) &amp;emsp;&amp;emsp;&amp;emsp;本来准备国庆写点东西的,但是几乎都是写写删删,憋了几天没写出个所以然来,后来索性就没写了.最近几天自己看视频算是提前研究完了SSH整合,而且也用整合后的框架模仿着写了2个案例,过程曲折,BUG满天飞.全是没遇到过的.有的BUG我甚至花了一上午加中午休息的时间查询各种资料才解决掉,而且都是细节配置问题….但是自己解决了BUG之后的那种喜悦感,">
+<meta name="twitter:image" content="http://yoursite.com/SSH整合-一/ssh.jpg">
 
 
 
@@ -132,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/SSH整合-一/"/>
 
 
 
 
 
-  <title>僕の世界へようこそ</title>
+  <title>SSH整合(一) | 僕の世界へようこそ</title>
   
 
 
@@ -163,9 +167,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,9 +250,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -280,9 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/SSH整合-一/" itemprop="url">SSH整合(一)</a></h1>
+          <h1 class="post-title" itemprop="name headline">SSH整合(一)</h1>
         
 
         <div class="post-meta">
@@ -332,9 +332,7 @@
       
 
       
-        
-          
-            <h2 id=""><a href="#" class="headerlink" title=""></a><center><embed src="//music.163.com/style/swf/widget.swf?sid=409650851&type=2&auto=1&width=320&height=66" width="340" height="86" allownetworking="all"></center></h2><h3 id="SSH整合笔记-一"><a href="#SSH整合笔记-一" class="headerlink" title="SSH整合笔记(一)"></a><center>SSH整合笔记(一)</center></h3><hr>
+        <h2 id=""><a href="#" class="headerlink" title=""></a><center><embed src="//music.163.com/style/swf/widget.swf?sid=409650851&type=2&auto=1&width=320&height=66" width="340" height="86" allownetworking="all"></center></h2><h3 id="SSH整合笔记-一"><a href="#SSH整合笔记-一" class="headerlink" title="SSH整合笔记(一)"></a><center>SSH整合笔记(一)</center></h3><hr>
 <h6 id="emsp-emsp-emsp-本来准备国庆写点东西的-但是几乎都是写写删删-憋了几天没写出个所以然来-后来索性就没写了-最近几天自己看视频算是提前研究完了SSH整合-而且也用整合后的框架模仿着写了2个案例-过程曲折-BUG满天飞-全是没遇到过的-有的BUG我甚至花了一上午加中午休息的时间查询各种资料才解决掉-而且都是细节配置问题…-但是自己解决了BUG之后的那种喜悦感-也还是蛮开心的-哈哈-所以这篇主要就是记录-我整合SSH的时候出现的各种大小BUG-给大家分享出来共同学习"><a href="#emsp-emsp-emsp-本来准备国庆写点东西的-但是几乎都是写写删删-憋了几天没写出个所以然来-后来索性就没写了-最近几天自己看视频算是提前研究完了SSH整合-而且也用整合后的框架模仿着写了2个案例-过程曲折-BUG满天飞-全是没遇到过的-有的BUG我甚至花了一上午加中午休息的时间查询各种资料才解决掉-而且都是细节配置问题…-但是自己解决了BUG之后的那种喜悦感-也还是蛮开心的-哈哈-所以这篇主要就是记录-我整合SSH的时候出现的各种大小BUG-给大家分享出来共同学习" class="headerlink" title="&emsp;&emsp;&emsp;本来准备国庆写点东西的,但是几乎都是写写删删,憋了几天没写出个所以然来,后来索性就没写了.最近几天自己看视频算是提前研究完了SSH整合,而且也用整合后的框架模仿着写了2个案例,过程曲折,BUG满天飞.全是没遇到过的.有的BUG我甚至花了一上午加中午休息的时间查询各种资料才解决掉,而且都是细节配置问题….但是自己解决了BUG之后的那种喜悦感,也还是蛮开心的,哈哈!所以这篇主要就是记录,我整合SSH的时候出现的各种大小BUG,给大家分享出来共同学习."></a>&emsp;&emsp;&emsp;本来准备国庆写点东西的,但是几乎都是写写删删,憋了几天没写出个所以然来,后来索性就没写了.最近几天自己看视频算是提前研究完了SSH整合,而且也用整合后的框架模仿着写了2个案例,过程曲折,BUG满天飞.全是没遇到过的.有的BUG我甚至花了一上午加中午休息的时间查询各种资料才解决掉,而且都是细节配置问题….但是自己解决了BUG之后的那种喜悦感,也还是蛮开心的,哈哈!所以这篇主要就是记录,我整合SSH的时候出现的各种大小BUG,给大家分享出来共同学习.</h6><hr>
 <h5 id="emsp-emsp-这一篇的主要是分享一些环境准备的bug-相信小伙伴们都已经感同身受了-进入了框架阶段之后就是各种配配配-各种xml写来写去-错一丁点都不行-想起昨晚配c3p0把dataSource的S没大写就报错了-这报错不要紧-一检查就是半个小时起-后来发现是这个问题-整个人都不好了-所以小伙伴们写的时候一定要细心-实在不行ctrl-c-v大法-哈哈-好了废话不多说-直接进入咱们的主题"><a href="#emsp-emsp-这一篇的主要是分享一些环境准备的bug-相信小伙伴们都已经感同身受了-进入了框架阶段之后就是各种配配配-各种xml写来写去-错一丁点都不行-想起昨晚配c3p0把dataSource的S没大写就报错了-这报错不要紧-一检查就是半个小时起-后来发现是这个问题-整个人都不好了-所以小伙伴们写的时候一定要细心-实在不行ctrl-c-v大法-哈哈-好了废话不多说-直接进入咱们的主题" class="headerlink" title="&emsp;&emsp;这一篇的主要是分享一些环境准备的bug,相信小伙伴们都已经感同身受了.进入了框架阶段之后就是各种配配配,各种xml写来写去.错一丁点都不行.想起昨晚配c3p0把dataSource的S没大写就报错了.这报错不要紧,一检查就是半个小时起,后来发现是这个问题,整个人都不好了.所以小伙伴们写的时候一定要细心,实在不行ctrl+c,v大法.哈哈,好了废话不多说,直接进入咱们的主题!"></a>&emsp;&emsp;<strong>这一篇的主要是分享一些环境准备的bug,相信小伙伴们都已经感同身受了.进入了框架阶段之后就是各种配配配,各种xml写来写去.错一丁点都不行.想起昨晚配c3p0把dataSource的S没大写就报错了.这报错不要紧,一检查就是半个小时起,后来发现是这个问题,整个人都不好了.所以小伙伴们写的时候一定要细心,实在不行ctrl+c,v大法.哈哈,好了废话不多说,直接进入咱们的主题!</strong></h5><ul>
 <li>首先是jar包,这个真的把我坑的要死,我们hibernate学习用的hibernate3.但是老师给的资源包却是hibernate5,导致我在整合hibernate的时候,配置web.xml文件中,hibernate用的3版本.但是这个加载不报错,就是session拿不到,后来找了半天才知道是hibernate5那里写成3了,类似的配置在bean.xml中,管理sessionfactory的时候也碰到了,希望小伙伴们在配置的时候一定注意版本的问题.我整合的是spring4+hibernate5+struts2.3.还有用userLiberay的时候,记得手动发布到tomcat上,不然部署的lib包里没有文件.还有个tomcat的小bug,我的spring和struts整合j的ar包,有一个web包死活自动发布不了,最后没法,只能自己手动拷了….</li>
@@ -360,8 +358,6 @@
 <p>好了,今天就分享到这里,后面有bug我会继续在这里更新的,打卡,睡觉!!老规矩最后来首歌,各位晚安.(手机端的小伙伴们因为看不到这个网易云插件,所以各位直接手动吧,歌名:<strong>霜雪千年</strong>)(<strong>双笙/封茗囧菌</strong>版本的).唱得真心不错,重点是声音好听,哈哈!</p>
 <p></p><p align="right">2017-10-11 02:07:29 星期三</p><br><img src="/SSH整合-一/ssh.jpg" alt=""><p></p>
 
-          
-        
       
     </div>
     
@@ -376,142 +372,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/好奇心/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/hl.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="僕の世界へようこそ">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/好奇心/" itemprop="url">别让你的好奇心下线</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-27T20:25:33+08:00">
-                2017-09-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/bug集-ssh框架整合/" rel="tag"># bug集,ssh框架整合</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id=""><a href="#" class="headerlink" title=""></a><center><embed src="//music.163.com/style/swf/widget.swf?sid=28773822&type=2&auto=0&width=320&height=66" width="340" height="86" allownetworking="all"></center></h2><h5 id="emsp-emsp-emsp-第一篇博客-想了很久不知道该写些什么-鼓捣了2天终于把软件都弄好了-过程曲折-说多了都是泪-最后想来还是聊一聊最近学习的状态吧"><a href="#emsp-emsp-emsp-第一篇博客-想了很久不知道该写些什么-鼓捣了2天终于把软件都弄好了-过程曲折-说多了都是泪-最后想来还是聊一聊最近学习的状态吧" class="headerlink" title="&emsp;&emsp;&emsp;第一篇博客,想了很久不知道该写些什么.鼓捣了2天终于把软件都弄好了.过程曲折,说多了都是泪.最后想来还是聊一聊最近学习的状态吧."></a>&emsp;&emsp;&emsp;第一篇博客,想了很久不知道该写些什么.鼓捣了2天终于把软件都弄好了.过程曲折,说多了都是泪.最后想来还是聊一聊最近学习的状态吧.</h5><hr>
-<p><strong>以下来自百度百科:</strong><br>好奇心是动物处于对某事物全部或部分属性空白时，本能的想添加此事物的属性的内在心理。表现为：</p>
-<ol>
-<li>对一些事物表示特别注意的情绪。</li>
-<li>喜欢探究不了解事物的心理状态。</li>
-<li>对于怪诞的嗜好或热情。</li>
-</ol>
-<p>心理学认为：好奇心是个体遇到新奇事物或处在新的外界条件下所产生的注意、操作、提问的心理倾向。好奇心是个体学习的内在动机之一、个体寻求知识的动力，是创造性人才的重要特征。</p>
-<p>这个解释我个人还挺能接受的,特别是作为程序员.我觉得一个程序员的必备技能就是无时无刻不下线的好奇心.之前<strong>谈斌</strong>老师说我们不是技术工种,是熟练工种.我觉得挺有道理,一个好的程序员并不仅仅在于你功能实现的多么完美,代码完成的多么巧妙,更多的是一颗随时在线的好奇心.<strong>阳哥</strong>之前上课也无时无刻没有提及个人学习的重要性.师傅领进门,修为靠个人.我现在可能就是这种心境.哈哈,接下来几个月给自己加油!<br> </p><p align="right">2017-09-27 20:31:41 星期三</p><br><img src="/好奇心/044.jpg" alt=""><p></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/好奇心/" rel="next" title="别让你的好奇心下线">
+                <i class="fa fa-chevron-left"></i> 别让你的好奇心下线
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -521,10 +411,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -532,6 +423,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -552,8 +447,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/hl.png"
@@ -606,6 +510,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH整合笔记-一"><span class="nav-number">1.1.</span> <span class="nav-text">SSH整合笔记(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#emsp-emsp-emsp-本来准备国庆写点东西的-但是几乎都是写写删删-憋了几天没写出个所以然来-后来索性就没写了-最近几天自己看视频算是提前研究完了SSH整合-而且也用整合后的框架模仿着写了2个案例-过程曲折-BUG满天飞-全是没遇到过的-有的BUG我甚至花了一上午加中午休息的时间查询各种资料才解决掉-而且都是细节配置问题…-但是自己解决了BUG之后的那种喜悦感-也还是蛮开心的-哈哈-所以这篇主要就是记录-我整合SSH的时候出现的各种大小BUG-给大家分享出来共同学习"><span class="nav-number">1.1.0.0.1.</span> <span class="nav-text">   本来准备国庆写点东西的,但是几乎都是写写删删,憋了几天没写出个所以然来,后来索性就没写了.最近几天自己看视频算是提前研究完了SSH整合,而且也用整合后的框架模仿着写了2个案例,过程曲折,BUG满天飞.全是没遇到过的.有的BUG我甚至花了一上午加中午休息的时间查询各种资料才解决掉,而且都是细节配置问题….但是自己解决了BUG之后的那种喜悦感,也还是蛮开心的,哈哈!所以这篇主要就是记录,我整合SSH的时候出现的各种大小BUG,给大家分享出来共同学习.</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#emsp-emsp-这一篇的主要是分享一些环境准备的bug-相信小伙伴们都已经感同身受了-进入了框架阶段之后就是各种配配配-各种xml写来写去-错一丁点都不行-想起昨晚配c3p0把dataSource的S没大写就报错了-这报错不要紧-一检查就是半个小时起-后来发现是这个问题-整个人都不好了-所以小伙伴们写的时候一定要细心-实在不行ctrl-c-v大法-哈哈-好了废话不多说-直接进入咱们的主题"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">  这一篇的主要是分享一些环境准备的bug,相信小伙伴们都已经感同身受了.进入了框架阶段之后就是各种配配配,各种xml写来写去.错一丁点都不行.想起昨晚配c3p0把dataSource的S没大写就报错了.这报错不要紧,一检查就是半个小时起,后来发现是这个问题,整个人都不好了.所以小伙伴们写的时候一定要细心,实在不行ctrl+c,v大法.哈哈,好了废话不多说,直接进入咱们的主题!</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -726,10 +646,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
