@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="bug集,ssh框架整合," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="僕の世界へようこそ" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="SSH整合笔记(二)&amp;emsp;&amp;emsp;&amp;emsp;说一下最近的进度吧,截止到目前,课程上传统的三大框架已经学完了,期间还学习了Maven的项目管理,关于Maven有个博主写的非常好,推荐给小伙伴们阅读学习.(详见左侧推荐阅读链接).马上要进入的是Bos物流项目,这是一个基于ERP系统,由用友软件开发的一个宅急送后台系统,后面我会专门开一个专题,用来记录整个项目学习中的心得和体会.而且我目前正">
+<meta name="keywords" content="bug集,ssh框架整合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSH整合(二)">
+<meta property="og:url" content="http://yoursite.com/SSH整合-二/index.html">
+<meta property="og:site_name" content="僕の世界へようこそ">
+<meta property="og:description" content="SSH整合笔记(二)&amp;emsp;&amp;emsp;&amp;emsp;说一下最近的进度吧,截止到目前,课程上传统的三大框架已经学完了,期间还学习了Maven的项目管理,关于Maven有个博主写的非常好,推荐给小伙伴们阅读学习.(详见左侧推荐阅读链接).马上要进入的是Bos物流项目,这是一个基于ERP系统,由用友软件开发的一个宅急送后台系统,后面我会专门开一个专题,用来记录整个项目学习中的心得和体会.而且我目前正">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/SSH整合-二/ssh.jpg">
+<meta property="og:updated_time" content="2017-10-18T08:41:59.036Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSH整合(二)">
+<meta name="twitter:description" content="SSH整合笔记(二)&amp;emsp;&amp;emsp;&amp;emsp;说一下最近的进度吧,截止到目前,课程上传统的三大框架已经学完了,期间还学习了Maven的项目管理,关于Maven有个博主写的非常好,推荐给小伙伴们阅读学习.(详见左侧推荐阅读链接).马上要进入的是Bos物流项目,这是一个基于ERP系统,由用友软件开发的一个宅急送后台系统,后面我会专门开一个专题,用来记录整个项目学习中的心得和体会.而且我目前正">
+<meta name="twitter:image" content="http://yoursite.com/SSH整合-二/ssh.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '黄乐'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/SSH整合-二/"/>
+
+
+
+
+
+  <title>SSH整合(二) | 僕の世界へようこそ</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">僕の世界へようこそ</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-board">
+          <a href="/board/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SSH整合-二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hl.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="僕の世界へようこそ">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SSH整合(二)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T15:58:52+08:00">
+                2017-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,491
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id=""><a href="#" class="headerlink" title=""></a><center><embed src="//music.163.com/style/swf/widget.swf?sid=35345243&type=2&auto=0&width=320&height=66" width="340" height="86" allownetworking="all"></center></h2><h3 id="SSH整合笔记-二"><a href="#SSH整合笔记-二" class="headerlink" title="SSH整合笔记(二)"></a><center>SSH整合笔记(二)</center></h3><h5 id="emsp-emsp-emsp-说一下最近的进度吧-截止到目前-课程上传统的三大框架已经学完了-期间还学习了Maven的项目管理-关于Maven有个博主写的非常好-推荐给小伙伴们阅读学习-详见左侧推荐阅读链接-马上要进入的是Bos物流项目-这是一个基于ERP系统-由用友软件开发的一个宅急送后台系统-后面我会专门开一个专题-用来记录整个项目学习中的心得和体会-而且我目前正在利用课余学习SpringMVC和MyBatis-在这个项目中-我会尽量使用两种框架系统-SSH和SSM-来完成功能点-以此来体会其中的差异-好了-进入正题-这篇主要是描述一些实现功能点-主要是增删改查-时-代码中出现的bug-注解为主"><a href="#emsp-emsp-emsp-说一下最近的进度吧-截止到目前-课程上传统的三大框架已经学完了-期间还学习了Maven的项目管理-关于Maven有个博主写的非常好-推荐给小伙伴们阅读学习-详见左侧推荐阅读链接-马上要进入的是Bos物流项目-这是一个基于ERP系统-由用友软件开发的一个宅急送后台系统-后面我会专门开一个专题-用来记录整个项目学习中的心得和体会-而且我目前正在利用课余学习SpringMVC和MyBatis-在这个项目中-我会尽量使用两种框架系统-SSH和SSM-来完成功能点-以此来体会其中的差异-好了-进入正题-这篇主要是描述一些实现功能点-主要是增删改查-时-代码中出现的bug-注解为主" class="headerlink" title="&emsp;&emsp;&emsp;说一下最近的进度吧,截止到目前,课程上传统的三大框架已经学完了,期间还学习了Maven的项目管理,关于Maven有个博主写的非常好,推荐给小伙伴们阅读学习.(详见左侧推荐阅读链接).马上要进入的是Bos物流项目,这是一个基于ERP系统,由用友软件开发的一个宅急送后台系统,后面我会专门开一个专题,用来记录整个项目学习中的心得和体会.而且我目前正在利用课余学习SpringMVC和MyBatis.在这个项目中,我会尽量使用两种框架系统(SSH和SSM)来完成功能点,以此来体会其中的差异.好了,进入正题,这篇主要是描述一些实现功能点(主要是增删改查)时,代码中出现的bug,注解为主."></a>&emsp;&emsp;&emsp;说一下最近的进度吧,截止到目前,课程上传统的三大框架已经学完了,期间还学习了Maven的项目管理,关于Maven有个博主写的非常好,推荐给小伙伴们阅读学习.(详见左侧推荐阅读链接).马上要进入的是Bos物流项目,这是一个基于ERP系统,由用友软件开发的一个宅急送后台系统,后面我会专门开一个专题,用来记录整个项目学习中的心得和体会.而且我目前正在利用课余学习SpringMVC和MyBatis.在这个项目中,我会尽量使用两种框架系统(SSH和SSM)来完成功能点,以此来体会其中的差异.好了,进入正题,这篇主要是描述一些实现功能点(主要是增删改查)时,代码中出现的bug,注解为主.<a id="more"></a></h5><h5 id="emsp-emsp-emsp-一-持久层"><a href="#emsp-emsp-emsp-一-持久层" class="headerlink" title="&emsp;&emsp;&emsp;一.持久层"></a>&emsp;&emsp;&emsp;一.持久层</h5><p>&emsp;&emsp;&emsp;持久层也就是dao层,这块的代码主要是负责帮我们与数据库进行交互的.dao层使用的是hibernate框架技术.因为这里是整合,所以hibernate的核心工厂类sessionfactory已经交给spring的ioc容器去创建,同时spring强大的声明式事物管理,也囊括了hibernate的事物管理(主要体现在service层).这里有个有<strong>歧义</strong>的地方,那就是sessionfatory的创建方式和<strong>session</strong>的获取方式.我的代码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Resource</span></div><div class="line">	<span class="keyword">private</span> SessionFactory ssf;<span class="comment">//将session工厂从ioc容器取出,单例模式,保证唯一,使用时创建</span></div><div class="line">    ssf.getCurrentSession()<span class="comment">//从当前线程,拿到绑定的session,避免资源的浪费</span></div></pre></td></tr></table></figure></p>
+<p>另外一种写法,代码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Repository</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderDAOImpl</span> <span class="keyword">extends</span> <span class="title">HibernateDaoSupport</span> <span class="keyword">implements</span> <span class="title">IOrderDAO</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="meta">@Autowired</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSupperSessionFactory</span><span class="params">(SessionFactory sessionFactory)</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>.setSessionFactory(sessionFactory);</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<p>这两种写法其实都可以,但是我更喜欢第一种.因为我个人认为,第二种写法,可以明显看出是耦合了spring的 HibernateDaoSupport 这个类的,它相当于spring对hibernate又一层的封装.对于代码的高内聚,低耦合思想.我不太喜欢这么写.我的写法更倾向于使用原生的hibernate来进行数据库的交互.这样即使spring出错了,我的dao层代码是不用更改的.当然如果有更好的解释,欢迎一起交流.</p>
+<h5 id="emsp-emsp-emsp-二-业务层"><a href="#emsp-emsp-emsp-二-业务层" class="headerlink" title="&emsp;&emsp;&emsp;二.业务层"></a>&emsp;&emsp;&emsp;二.业务层</h5><p>&emsp;&emsp;&emsp;业务层最容易出错的地方就是事物的问题,其中有一个问题还挺典型的.那就是使用注解配置事物的时候,有一个弊端.那就是无法指定方法,只能对当前类所有的方法添加事物操作,否则在做增删改数据的时候,事物永远无法提交.我曾经出错的代码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Transactional</span>  <span class="comment">//注意这里的事物配置在更新的方法上了,导致整个类的其他方法提交时都没在事物的管理之内</span></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(Employee emp)</span> </span>&#123;</div><div class="line">		employeeDao.update(emp);</div><div class="line"></div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<p>正确的应该如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Service</span></div><div class="line"><span class="meta">@Transactional</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EmployeeServiceImpl</span> <span class="keyword">implements</span> <span class="title">IEmployeeService</span> </span>&#123;</div></pre></td></tr></table></figure></p>
+<p>tips:如果想要针对特定的方法,也可以做到,那就是使用xml的事物配置,详见SSH整合(一).</p>
+<h5 id="emsp-emsp-emsp-三-表现层"><a href="#emsp-emsp-emsp-三-表现层" class="headerlink" title="&emsp;&emsp;&emsp;三.表现层"></a>&emsp;&emsp;&emsp;三.表现层</h5><p>&emsp;&emsp;&emsp;这里主要是struts2的注解配置和struts.xml配置问题.关于注解的列出几个比较容易出错的地方:</p>
+<ul>
+<li><p><strong>配置action的时候,几点解释</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Action</span>(value = <span class="string">"empInfoList"</span>, className = <span class="string">"empAction"</span>, results = &#123;</div><div class="line">			<span class="meta">@Result</span>(name = <span class="string">"getAllEmpInfo"</span>, location = <span class="string">"/empList.jsp"</span>) &#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>这里的value值对应的就是action的访问名,还要说一点的就是这里前端发请求的时候,一定指定的action名字.action,因为配置了延迟加载,指定拦截以.action结尾的请求.</p>
+</li>
+<li>classname的值对应的就是action的全类名.这里不用写,因为已经交给spring的ioc容器去创建.所以直接写类名就可以了.</li>
+<li>result的配置就是返回的结果视图,这里要注意的就是location和type属性.这两个是配套使用的,如果你的type指定为转发(默认不写),那么这个时候你要考虑一个问题,<strong>那就是表单重复提交的问题.</strong>说直白点,配置在转发里的参数,一次请求就会执行一次action,也就是说,这里你刷新网页,那么就会再次访问一次action.所以,这里我们不能用转发,要用重定向,代码如下:<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Action</span>(value = <span class="string">"updateEmp"</span>, className = <span class="string">"empAction"</span>,results = &#123;</div><div class="line">			<span class="meta">@Result</span>(name = <span class="string">"updateSuccess"</span>,type=<span class="string">"redirectAction"</span>, location = <span class="string">"empInfoList"</span>) &#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>重定向有两种,redirectAction和redirect,location分别对应的就是一个action和jsp页面.</p>
+<ul>
+<li><strong>全局配置</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Controller</span></div><div class="line"><span class="meta">@Namespace</span>(<span class="string">"/"</span>)</div><div class="line"><span class="meta">@ParentPackage</span>(<span class="string">"ssh"</span>) <span class="comment">//包继承,如果使用到json数据自动封装,要继承"json-default"</span></div><div class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EmpAction</span> <span class="keyword">extends</span> <span class="title">ActionSupport</span> <span class="keyword">implements</span> <span class="title">ModelDriven</span>&lt;<span class="title">EmpInfo</span>&gt; </span>&#123;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>其他全局配置,像处理error和null以及拦截器其中的方法视图,配置如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"ssh"</span> <span class="attr">namespace</span>=<span class="string">"/"</span> <span class="attr">extends</span>=<span class="string">"struts-default"</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 配置登录拦截器 --&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">interceptors</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">interceptor</span> <span class="attr">name</span>=<span class="string">"loginCheck"</span> <span class="attr">class</span>=<span class="string">"cn.hl.interceptor.LoginInterceptor"</span>&gt;</span><span class="tag">&lt;/<span class="name">interceptor</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">interceptor-stack</span> <span class="attr">name</span>=<span class="string">"loginStack"</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">interceptor-ref</span> <span class="attr">name</span>=<span class="string">"defaultStack"</span>&gt;</span><span class="tag">&lt;/<span class="name">interceptor-ref</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">interceptor-ref</span> <span class="attr">name</span>=<span class="string">"loginCheck"</span>&gt;</span><span class="tag">&lt;/<span class="name">interceptor-ref</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">interceptor-stack</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">interceptors</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 执行指定的拦截器 --&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">default-interceptor-ref</span> <span class="attr">name</span>=<span class="string">"loginStack"</span>&gt;</span><span class="tag">&lt;/<span class="name">default-interceptor-ref</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="comment">&lt;!-- 全局视图 --&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">global-results</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"success"</span>&gt;</span>/index.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"login"</span> <span class="attr">type</span>=<span class="string">"redirect"</span>&gt;</span>/login.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="comment">&lt;!-- 错误视图配置 --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 			&lt;result name="null"&gt;/error/null.jsp&lt;/result&gt;</span></div><div class="line"><span class="comment"> --&gt;</span>			<span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"error"</span>&gt;</span>/error.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">global-results</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="comment">&lt;!-- 全局异常 --&gt;</span> </div><div class="line">		<span class="tag">&lt;<span class="name">global-exception-mappings</span>&gt;</span></div><div class="line">			<span class="comment">&lt;!-- result 会取找全局视图的名称 --&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">exception-mapping</span> <span class="attr">result</span>=<span class="string">"null"</span></span></div><div class="line"><span class="tag">				<span class="attr">exception</span>=<span class="string">"java.lang.NullPointerException"</span>&gt;</span><span class="tag">&lt;/<span class="name">exception-mapping</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">exception-mapping</span> <span class="attr">result</span>=<span class="string">"error"</span> <span class="attr">exception</span>=<span class="string">"java.lang.Exception"</span>&gt;</span><span class="tag">&lt;/<span class="name">exception-mapping</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">global-exception-mappings</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">package</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这里就是我遇到的所有bug了,其中有些还是很多缺陷.比如前端页面,我这里的前端页面,没有使用到jquery的技术,全部都是用struts2的s标签写的.还有就是代码冗余很多,没有做baseAction和baseService等的抽取.以及数据库语句优化等等,这些问题我已经注意到了,所以在接下来的bos项目中,我会多注意这些细节问题,让自己的代码更加完美.照例歌一首,歌名:<strong>干物女</strong>(依然来自<strong>封茗囧菌</strong>).</p>
+<p></p><p align="right">2017-10-18 16:08:58 星期三</p><br><img src="/SSH整合-二/ssh.jpg" alt=""><p></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/bug集/" rel="tag"><i class="fa fa-tag"></i> bug集</a>
+          
+            <a href="/tags/ssh框架整合/" rel="tag"><i class="fa fa-tag"></i> ssh框架整合</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/SSH整合-一/" rel="next" title="SSH整合(一)">
+                <i class="fa fa-chevron-left"></i> SSH整合(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/hl.png"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+           
+              <p class="site-description motion-element" itemprop="description">welcome to my study blog</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/javaenjoy/javaenjoy.github.io" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/1770467390" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/playlist?id=83312138" target="_blank" title="网易云歌单">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                    
+                      网易云歌单
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://stevex.blog.51cto.com/4300375/1284437" title="Java BIO、NIO、AIO 学习" target="_blank">Java BIO、NIO、AIO 学习</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/coding_or_coded/article/details/6856014" title="Java Executors(线程池)" target="_blank">Java Executors(线程池)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/tzyy/p/4768859.html" title="使用Maven管理web项目" target="_blank">使用Maven管理web项目</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH整合笔记-二"><span class="nav-number">1.1.</span> <span class="nav-text">SSH整合笔记(二)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#emsp-emsp-emsp-说一下最近的进度吧-截止到目前-课程上传统的三大框架已经学完了-期间还学习了Maven的项目管理-关于Maven有个博主写的非常好-推荐给小伙伴们阅读学习-详见左侧推荐阅读链接-马上要进入的是Bos物流项目-这是一个基于ERP系统-由用友软件开发的一个宅急送后台系统-后面我会专门开一个专题-用来记录整个项目学习中的心得和体会-而且我目前正在利用课余学习SpringMVC和MyBatis-在这个项目中-我会尽量使用两种框架系统-SSH和SSM-来完成功能点-以此来体会其中的差异-好了-进入正题-这篇主要是描述一些实现功能点-主要是增删改查-时-代码中出现的bug-注解为主"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">   说一下最近的进度吧,截止到目前,课程上传统的三大框架已经学完了,期间还学习了Maven的项目管理,关于Maven有个博主写的非常好,推荐给小伙伴们阅读学习.(详见左侧推荐阅读链接).马上要进入的是Bos物流项目,这是一个基于ERP系统,由用友软件开发的一个宅急送后台系统,后面我会专门开一个专题,用来记录整个项目学习中的心得和体会.而且我目前正在利用课余学习SpringMVC和MyBatis.在这个项目中,我会尽量使用两种框架系统(SSH和SSM)来完成功能点,以此来体会其中的差异.好了,进入正题,这篇主要是描述一些实现功能点(主要是增删改查)时,代码中出现的bug,注解为主.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#emsp-emsp-emsp-一-持久层"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">   一.持久层</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#emsp-emsp-emsp-二-业务层"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">   二.业务层</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#emsp-emsp-emsp-三-表现层"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">   三.表现层</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄乐</span>
+</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+<!-- <div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+-->
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共3.5k字</span>
+</div>
+
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/src/mylove.js"></script>
+</body>
+</html>
