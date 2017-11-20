@@ -502,6 +502,10 @@
                   <a href="http://www.cnblogs.com/tzyy/p/4768859.html" title="使用Maven管理web项目" target="_blank">使用Maven管理web项目</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ityouknow.com/" title="非常厉害的一位博主" target="_blank">非常厉害的一位博主</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -698,19 +702,15 @@
    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
    
        <script type="text/javascript">
-           function ShowGitment(){
-               document.getElementById("gitment-display-button").style.display = "none";
-               document.getElementById("gitment-container").style.display = "block";
-               var gitment = new Gitment({
-                   id: document.location.href, 
-                   owner: 'javaenjoy',
-                   repo: 'javaenjoy.github.io',
-                   oauth: {
-                       client_id: '85e8b047c17a4a8782e5',
-                       client_secret: 'f3453a0e66ed25002eba739b3baec1254b86e9f6',
-                   }});
-               gitment.render('gitment-container');
-           }
+           var gitment = new Gitment({
+               id: window.location.pathname, 
+               owner: 'javaenjoy',
+               repo: 'javaenjoy.github.io',
+               oauth: {
+                   client_id: '85e8b047c17a4a8782e5',
+                   client_secret: 'f3453a0e66ed25002eba739b3baec1254b86e9f6',
+               }});
+           gitment.render('gitment-container');
        </script>
    
 
