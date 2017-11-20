@@ -813,15 +813,19 @@
    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
    
        <script type="text/javascript">
-           var gitment = new Gitment({
-               id: window.location.pathname, 
-               owner: 'javaenjoy',
-               repo: 'javaenjoy.github.io',
-               oauth: {
-                   client_id: '85e8b047c17a4a8782e5',
-                   client_secret: 'f3453a0e66ed25002eba739b3baec1254b86e9f6',
-               }});
-           gitment.render('gitment-container');
+           function ShowGitment(){
+               document.getElementById("gitment-display-button").style.display = "none";
+               document.getElementById("gitment-container").style.display = "block";
+               var gitment = new Gitment({
+                   id: document.location.href, 
+                   owner: 'javaenjoy',
+                   repo: 'javaenjoy.github.io',
+                   oauth: {
+                       client_id: '85e8b047c17a4a8782e5',
+                       client_secret: 'f3453a0e66ed25002eba739b3baec1254b86e9f6',
+                   }});
+               gitment.render('gitment-container');
+           }
        </script>
    
 
